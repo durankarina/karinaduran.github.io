@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>Animación Creeper</title>
+   <style>
+       canvas{
+           border: 1px solid #6ac3e1;
+           background-color: rgb(169, 225, 239);
+       }
+   </style>
+   <script>
+       var x=Math.random() * 800;
+       var y=Math.random() * 600;
+       var dx=4;
+       function animate(){
+           requestAnimationFrame(animate);
+           var canvas = document.getElementById("micanvas");
+           var context = canvas.getContext("2d");
+           context.clearRect(0, 0, innerWidth, innerHeight);
+           //console.log('animando');
+           //context.font = '40pt Calibri';
+           //context.fillStyle = 'blue';
+           //context.fillText('Hello World!', x, y);
+
+           //column no.1
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x,10,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x,70,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x,130,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x,190,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x,250,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x,310,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x,370,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x,430,60,60);
+
+           //column no.2
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+59,10,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+59,70,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+59,130,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+59,190,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+59,250,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+59,310,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+59,370,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+59,430,60,60);
+
+           //column no.3
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+118,10,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+118,70,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+118,130,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+118,190,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+118,250,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+118,310,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+118,370,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+118,430,60,60);
+
+           //column no.4
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+177,10,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+177,70,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+177,130,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+177,190,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+177,250,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+177,310,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+177,370,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+177,430,60,60);
+
+           //column no.5
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+236,10,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+236,70,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+236,130,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+236,190,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+236,250,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+236,310,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+236,370,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+236,430,60,60);
+
+           //column no.6
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+295,10,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+295,70,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+295,130,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+295,190,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+295,250,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+295,310,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+295,370,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+295,430,60,60);
+
+           //column no.7
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+354,10,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+354,70,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+354,130,60,60);
+           context.fillStyle='rgba(0,0,0,1)';
+           context.fillRect(x+354,190,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+354,250,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+354,310,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+354,370,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+354,430,60,60);
+
+           //column no.8
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+413,10,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+413,70,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+413,130,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+413,190,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+413,250,60,60);
+           context.fillStyle='rgba(136,185,80,1)';
+           context.fillRect(x+413,310,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+413,370,60,60);
+           context.fillStyle='rgba(69,121,45,1)';
+           context.fillRect(x+413,430,60,60);
+
+
+            if (x > 800 || x < 0){
+                dx= -dx;
+            }
+           x+=dx;
+           
+       }
+       animate();
+   </script>
+
+   </head>
+ <body>
+    <canvas id="micanvas" width="800" height="600"></canvas>
+ </body>
+</html>

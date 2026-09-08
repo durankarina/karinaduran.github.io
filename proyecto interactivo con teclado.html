@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Key Codes</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      body { 
+        text-align: center;
+        background-color:rgb(154, 203, 108);
+      }
+      canvas {
+        background-color:rgb(90, 165, 15);
+      }
+      h1 {
+        text-align: center;
+        color:rgb(8, 101, 5);
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <br>
+    <br>
+    <h1>Come Saludable</h1>
+    <canvas id="canvas" width="700" height="600"></canvas>
+    <aside>Press arrow keys.</aside>
+    
+    <script src="keycode.js"></script>
+    <script>
+    window.onload = function () {
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+      var x = 200;
+      var y = 200;
+      context.font = '40pt Times new roman';
+      context.fillStyle = 'green';
+      context.fillText('¡Verduras!', x, y); //<== para poner texto en el canvas
+
+      var imagen= new Image(); // variable para guardar la imagen
+      imagen.src = "alcachofa.png"; // fuente de donde toma la imagen
+      var imagen2= new Image(); // variable para guardar la imagen
+      imagen2.src = "brocoli.png"; // fuente de donde toma la imagen
+      var imagen3= new Image(); // variable para guardar la imagen
+      imagen3.src = "coliflor.png"; // fuente de donde toma la imagen
+      var imagen4= new Image(); // variable para guardar la imagen
+      imagen4.src = "datil.png"; // fuente de donde toma la imagen
+      var imagen5= new Image(); // variable para guardar la imagen
+      imagen5.src = "esparrago.png"; // fuente de donde toma la imagen
+      imagen.onload = function(){
+        context.drawImage(imagen, x, y+50, 200, 200); //<== para poner imagen en el canvas
+      };
+
+      context.fillRect(x,y,100,100);
+
+      function onKeyboardEvent (event) {
+        switch (event.keyCode) {
+        case keycode.UP:
+          console.log("up!");
+          context.clearRect(0, 0, innerWidth, innerHeight);
+          y-=5;
+          context.fillRect(x,y,100,100);
+          break;
+        case keycode.DOWN:
+          console.log("down!");
+          context.clearRect(0, 0, innerWidth, innerHeight);
+          y+=5;
+          context.fillRect(x,y,100,100);
+          break;
+        case keycode.LEFT:
+          console.log("left!");
+          context.clearRect(0, 0, innerWidth, innerHeight);
+          x-=5;
+          context.fillRect(x,y,100,100);
+          break;
+        case keycode.RIGHT:
+          console.log("right!");
+          context.clearRect(0, 0, innerWidth, innerHeight);
+          x+=5;
+          context.fillRect(x,y,100,100);
+          break;
+        case keycode.SPACE:
+          console.log("Jump!");
+          break;
+        case keycode.A:
+          console.log("Letra A");
+          context.clearRect(0, 0, innerWidth, innerHeight);
+          context.fillText('ALCACHOFA', x, y);
+          context.drawImage(imagen, x, y+50, 200, 200);
+          break;
+        case keycode.B:
+          console.log("Letra B");
+          context.clearRect(0, 0, innerWidth, innerHeight);
+          context.drawImage(imagen2, x, y+50, 200, 200);
+          context.fillText('BRÓCOLI', x, y);
+          break;
+        case keycode.C:
+          console.log("Letra C");
+          context.clearRect(0, 0, innerWidth, innerHeight);
+          context.fillText('COLIFLOR', x, y);
+          context.drawImage(imagen3, x, y+50, 200, 200); 
+          break;
+        case keycode.D:
+          console.log("Letra D");
+          context.clearRect(0, 0, innerWidth, innerHeight);
+          context.fillText('DÁTIL', x, y);
+          context.drawImage(imagen4, x, y+50, 200, 200); 
+          break;
+        case keycode.E:
+          console.log("Letra E");
+          context.clearRect(0, 0, innerWidth, innerHeight);
+          context.fillText('ESPÁRRAGO', x, y);
+          context.drawImage(imagen5, x, y+50, 200, 200); 
+          break;
+        
+        default:
+          console.log(event.keyCode);
+        }
+      }
+
+      window.addEventListener('keydown', onKeyboardEvent, false);
+    };
+    </script>
+  </body>
+</html>
