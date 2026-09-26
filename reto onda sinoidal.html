@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Waves Mario</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <style>
+    body{
+      background-color: rgb(19, 103, 133);
+      background-image:url("patron.png");
+    }
+    canvas{
+      background-image:url("mario.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display:block;
+      margin: 0 auto;
+      justify-content: center;
+      align-items: center; 
+      width: 80%;
+      border: 5px solid white;
+    }
+  </style>
+
+  <body>
+    <canvas id="canvas" width="2266" height="1342"></canvas>
+    
+    <script src="utils.js"></script>
+    <script src="estrella.js"></script>
+    <script>
+    window.onload = function () {
+      var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d'),
+          ball = new Ball(),
+          angle = 0,
+          centerY = 2240,
+          range = 50,
+          xspeed = 6,
+          yspeed =0.07;
+        
+      ball.x = 0;
+        
+      (function drawFrame () {
+        window.requestAnimationFrame(drawFrame, canvas);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        ball.x += xspeed;
+        ball.y = centerY / 2 + Math.sin(angle) * range;
+        angle += yspeed;
+        ball.draw(context);
+
+        if (ball.x > canvas.width || ball.x < 0) {
+      xspeed *= -1;
+        }
+
+      }
+      ());
+
+      
+
+    };
+    </script>
+  </body>
+</html>
