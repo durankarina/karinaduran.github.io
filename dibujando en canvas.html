@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <canvas id="canvas" width="1000" height="800"></canvas>
+    <script>
+    window.onload = function () {
+      //Our code here...
+      var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d');
+         
+          //helado
+          context.save();
+          context.lineWidth = 2;
+          context.fillStyle = 'pink';
+          context.strokeStyle = 'white';
+          context.beginPath();
+          context.arc(150, 90, 50, 0, Math.PI * 2);
+          context.fill();
+          context.stroke();
+          context.restore();
+
+          context.save();
+          context.lineWidth = 2;
+          context.fillStyle = 'pink';
+          context.strokeStyle = 'white';
+          context.beginPath();
+          context.arc(150, 130, 50, 0, Math.PI * 2);
+          context.fill();
+          context.stroke();
+          context.restore();
+          
+          context.save();
+          context.lineWidth = 2;
+          context.strokeStyle = 'beige';
+          context.fillStyle='beige';
+          context.beginPath();
+          context.moveTo(100,150);
+          context.lineTo(150,250);
+          context.lineTo(200,150);
+          context.lineTo(100,150);
+          context.closePath();
+          context.fill();
+          context.stroke();
+          context.restore();
+          
+          
+         /*--dibujo de casita sencilla con triangulo y rectangulo--*/
+          context.save();
+          context.lineWidth = 2;
+          context.strokeStyle = 'brown';
+          context.fillStyle='brown';
+          context.lineJoin = "round";
+          context.lineCap = "round";
+          context.beginPath();
+          context.moveTo(250,100);
+          context.lineTo(350,30);
+          context.lineTo(450,100);
+          context.lineTo(250,100);
+          context.closePath();
+          context.fill();
+          context.stroke();
+          
+          context.save();
+          context.lineWidth = 2;
+          context.strokeStyle = 'beige';
+          context.fillStyle='beige';
+          context.lineJoin = "round";
+          context.lineCap = "round";
+          context.beginPath();
+          context.strokeRect(260, 102, 180, 140);
+          context.fillRect(260, 102, 180, 140);
+          context.closePath();
+          context.fill();
+          context.stroke();
+          context.restore();
+
+          context.save();
+          context.lineWidth = 2;
+          context.strokeStyle = 'brown';
+          context.fillStyle='brown';
+          context.lineJoin = "round";
+          context.lineCap = "round";
+          context.beginPath();
+          context.strokeRect(400, 192, 25, 50);
+          context.fillRect(400, 192, 25, 50);
+          context.closePath();
+          context.fill();
+          context.stroke();
+          context.restore();
+
+          context.save();
+          context.lineWidth = 2;
+          context.strokeStyle = 'silver';
+          context.fillStyle='silver';
+          context.lineJoin = "round";
+          context.lineCap = "round";
+          context.beginPath();
+          context.strokeRect(300, 140, 50, 50);
+          context.fillRect(300, 140, 50, 50);
+          context.closePath();
+          context.fill();
+          context.stroke();
+          context.restore();
+
+          //hongo
+
+          context.save();
+          context.lineWidth = 2;
+          context.strokeStyle = 'brown';
+          context.fillStyle='brown';
+          context.beginPath();
+          context.arc(150, 370, 80, Math.PI, 0);
+          context.lineTo(230, 370);
+          context.lineTo(150, 370);
+          context.closePath();
+          context.restore();
+          context.fill();
+          context.stroke();
+
+          context.save();
+          context.lineWidth = 2;
+          context.fillStyle = 'white';
+          context.strokeStyle = 'white';
+          context.beginPath();
+          context.arc(120, 300, 30, 0, Math.PI * 2);
+          context.fill();
+          context.stroke();
+          context.restore();
+
+          context.save();
+          context.lineWidth = 2;
+          context.fillStyle = 'white';
+          context.strokeStyle = 'white';
+          context.beginPath();
+          context.arc(200, 310, 10, 0, Math.PI * 2);
+          context.fill();
+          context.stroke();
+          context.restore();
+
+          context.save();
+          context.lineWidth = 2;
+          context.fillStyle = 'white';
+          context.strokeStyle = 'white';
+          context.beginPath();
+          context.arc(170, 340, 17, 0, Math.PI * 2);
+          context.fill();
+          context.stroke();
+          context.restore();
+
+          context.save();
+          context.lineWidth = 2;
+          context.strokeStyle = 'beige';
+          context.fillStyle='beige';
+          context.beginPath();
+          context.moveTo(120,372);
+          context.lineTo(110,472);
+          context.lineTo(190,472);
+          context.lineTo(180,372);
+          context.closePath();
+          context.fill();
+          context.stroke();
+          context.restore();
+
+          //luna
+           context.save();
+          context.lineWidth = 2;
+          context.strokeStyle = 'grey';
+          context.fillStyle='grey';
+          context.beginPath();
+          context.arc(230, 600, 100, 0, Math.PI * 2);
+          context.fill();
+          context.stroke();
+          // parte amarilla luna
+          context.fillStyle = 'white';
+          context.strokeStyle = 'white';
+          context.beginPath();
+          context.arc(190, 570, 80, 0, Math.PI * 2);
+          context.fill();
+          context.stroke();
+          context.restore();
+
+          // estrella
+          context.save();
+          context.lineWidth = 2;
+          context.strokeStyle = 'yellow';
+          context.fillStyle='yellow';
+          context.beginPath();
+          context.moveTo(500,280);
+          context.lineTo(470,345);
+          context.lineTo(400,350);
+          context.lineTo(450,400);
+          context.lineTo(430,470);
+          context.lineTo(500,430);
+          context.lineTo(570,470);
+          context.lineTo(550,400);
+          context.lineTo(600,350);
+          context.lineTo(530,345);
+          
+          context.closePath();
+          context.fill();
+          context.stroke();
+          context.restore();
+
+
+          };
+
+    </script>
+  </body>
+</html>
