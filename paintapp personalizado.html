@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mi Paint</title>
+    <style>
+      body{ 
+        text-align: center;
+        margin-top: 20px;
+        background-color:rgb(0, 0, 0);
+      }
+      canvas {
+        background-color: white;
+      }
+      .colores{
+        width: 100%;
+        height: 50px;
+        text-align: center;
+      }
+      .colores button{
+        width: 100px;
+        height: 40px;
+        margin-right: 5px;
+        margin-top: 5px;
+        color: white;
+        font: 25px impact;
+        cursor: pointer;
+        border-radius: 15px;
+      }
+      .colores button:hover{
+        opacity: 0.5;
+      }
+
+      #purple{
+        background: purple;
+      }
+      #teal{
+        background: teal;
+      }
+      #blue{
+        background: blue;
+      }
+      #green{
+        background: green;
+      }
+      #yellow{
+        background: yellow;
+      }
+
+       #otros button{
+        width: 300px;
+        height: 50px;
+        background: #ffffff;
+        color: rgb(0, 0, 0);
+        font: 25px impact;
+        cursor: pointer;
+        margin-bottom: 5px;
+        border-radius: 15px;
+      }
+      #otros button:hover{
+        opacity: 0.5;
+      }
+     
+      #grosor button {
+        width: 150px;
+        height: 40px;
+        margin: 5px;
+        background: white;
+        color: black;
+        font: 20px impact;
+        cursor: pointer;
+        border-radius: 15px;
+      }
+
+      #grosor button:hover {
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="colores">
+       <button id="purple" type="button" value="#800080"></button>
+       <button id="teal" type="button" value="#008080"></button>
+       <button id="blue" type="button" value="#0000ff"></button>
+       <button id="green" type="button" value="#00ff00"></button>
+       <button id="yellow" type="button" value="#ffff00"></button>
+    </div>
+
+<div id="grosor">
+  
+<button type="button" value="2">Thin</button>
+  <button type="button" value="5">Normal</button>
+  <button type="button" value="10">Thick</button>
+  <button type="button" value="20">Filler</button>
+</div>
+
+    <div id="otros">
+        <button id="clear" type="button">Borrar todo</button>
+    </div>
+    <canvas id="canvas" width="1000" height="700"></canvas>
+    <aside>Click and draw with the mouse.</aside>
+    
+    <script src="utils.js"></script>
+    <script>
+    window.onload = function () {
+  var canvas = document.getElementById('canvas'),
+      context = canvas.getContext('2d'),
+      mouse = utils.captureMouse(canvas);
+
+  canvas.addEventListener('mousedown', function () {
+    context.beginPath();
+    context.moveTo(mouse.x, mouse.y);
+    canvas.addEventListener('mousemove', onMouseMove, false);
+  }, false);
+
+  canvas.addEventListener('mouseup', function () {
+    canvas.removeEventListener('mousemove', onMouseMove, false);
+  }, false);
+
+  function onMouseMove () {
+    context.lineTo(mouse.x, mouse.y);
+    context.stroke();
+  }
+
+  // Cambiar color de trazo
+  var colores = document.getElementsByClassName('colores')[0];
+
+  colores.addEventListener('click', function(event) {
+    context.strokeStyle = event.target.value;
+  });
+
+  // Borrar todo
+  var clearButton = document.getElementById('clear');
+
+  clearButton.addEventListener('click', function() {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+  });
+
+  // Cambiar grosor del pincel
+  var grosores = document.getElementById('grosor');
+
+  grosores.addEventListener('click', function(event) {
+    if (event.target.tagName === 'BUTTON') {
+      context.lineWidth = event.target.value;
+    }
+  });
+
+}
+</script>
